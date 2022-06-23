@@ -1,0 +1,24 @@
+function send(event) {
+    alert("Hello World");
+    event.preventDefault();
+        Email.send({
+            // name: document.getElementById('user_name').value,
+            SecureToken : "79936229-3276-4489-9762-1a95e760e0b1",
+            Host : "https://folabade-my-portfolio.netlify.app/",
+            Username : 'folagbade',
+            Password : "folagbade",
+            To : 'folagbadeolowofela05@gmail.com',
+            From : document.getElementById('email').value,
+            Subject : 'Software Developing',
+            Project : document.getElementById('project').value,
+            Body : document.getElementById('message').value
+        }).then(function(response) {
+            if (response === 'OK') {
+                alert("Mail sent successfully");
+            }else {
+                throw new Error("Error: " + response.statusText)
+            }
+        });
+    // })
+    // 79936229-3276-4489-9762-1a95e760e0b1
+}
