@@ -219,12 +219,12 @@
                         <h3 class="title">contact Info</h3>
 
                         <div class="info">
-                            <h3><i class="fas fa-envelope"></i>folagbadeolowofela@gmail.com</h3>
-                            <h3><i class="fas fa-phone"></i>+2348066573156</h3>
-                            <h3><i class="fas fa-phone"></i>+2348102675115</h3>
+                            <a href="mailto:folagbadeolowofela05@gmail.com" ><h3><i class="fas fa-envelope"></i>folagbadeolowofela05@gmail.com</h3></a>
+                            <a href="https://api.whatsapp.com/send?phone+2348066573156" target="_blank" ><h3><i class="fa-brands fa-whatsapp-square"></i>08066573156</h3></a>
+                            <a href="tel:+2348066573156" >
+                            <h3><i class="fas fa-phone"></i>+2348066573156</h3></a>
                             <h3><i class="fas fa-map-marker-alt"></i>Oyo State, Nigeria</h3>
                         </div>
-
                     </div>
 
                     <form action="" role="form" id="contact-form">
@@ -232,7 +232,7 @@
                         <input type="text" placeholder="name" id="user_name" name="user_name" class="box">
                         <input type="email" placeholder="email" id="email" name="email" class="box">
                         <input type="text" placeholder="project" id="project" name="project" class="box">
-                        <textarea name="message" id="message" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                        <textarea name="message" cols="30" rows="10" class="box message" placeholder="message"></textarea>
                         <button class="btn" type="submit">send <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -267,18 +267,13 @@
 <script type="text/javascript">
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+            // event.preventDefault();
             // generate a five digit number for the contact_number variable
             this.contact_number.value = Math.random() * 100000 | 0;
             // these IDs from the previous steps
             emailjs.sendForm('service_fkvxp0b', 'template_vvhd90a', this)
                 .then(function() {
                     console.log('SUCCESS!');
-                    user_name.value ="";
-                    email.value ="";
-                    project.value ="";
-                    message.value =" ";
-
                 }, function(error) {
                     console.log('FAILED...', error);
                 });
